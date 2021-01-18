@@ -1,6 +1,6 @@
 #lang br
-; e.g. https://beautifulracket.com/basic/the-lexer.html
-;      https://github.com/racket/syntax-color/blob/master/syntax-color-lib/syntax-color/racket-lexer.rkt
+; see https://beautifulracket.com/basic/the-lexer.html
+; see https://github.com/racket/syntax-color/blob/master/syntax-color-lib/syntax-color/racket-lexer.rkt
 (require brag/support)
 (define-lex-abbrevs 
     [d (char-set "dD")]
