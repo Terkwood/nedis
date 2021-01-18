@@ -3,5 +3,7 @@
 (require brag/support)
 (define nedis-lexer
     (lexer-srcloc 
-        ["\n" (token 'NEWLINE lexeme)]))
+        ["\n" (token 'NEWLINE lexeme)]
+        [whitespace (token lexeme #:skip? #t)]))
+        
 (provide nedis-lexer)
