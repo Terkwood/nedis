@@ -22,6 +22,10 @@
         [get-cmd    (token 'GET lexeme)]
         [set-cmd    (token 'SET lexeme)]
         [del-cmd    (token 'DEL lexeme)]
+        [(:or (from/to "\"" "\"") (from/to "'" "'"))
+                    (token 'STRING
+                        (substring lexeme
+                            1 (sub1 (string-length lexeme))))]
         [any-string (token 'STRING lexeme)]
     ))
 
