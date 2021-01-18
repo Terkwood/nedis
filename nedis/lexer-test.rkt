@@ -33,7 +33,6 @@
 
 
 (check-equal?
-
  (lex "set")
  (list (srcloc-token (token "SET" "set") (srcloc 'string 1 0 1 3))))
 
