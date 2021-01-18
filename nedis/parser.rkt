@@ -1,9 +1,8 @@
 #lang brag
-program: (instruction | NEWLINE)*
-NEWLINE: "\n"
-instruction: (get | set | del)* NEWLINE
-key: STRING
-val: STRING
+program: "\n"* instruction ("\n"+ instruction)*
+instruction: get | set | del
 get: "GET" key
 set: "SET" key val
 del: "DEL" key
+key: STRING
+val: STRING
