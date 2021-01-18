@@ -14,6 +14,7 @@
     [set-cmd (:: s e t )]
     [del-cmd (:: d e l )]
     )
+
 (define nedis-lexer
     (lexer-srcloc 
         ["\n"       (token 'NEWLINE lexeme)]

@@ -30,12 +30,15 @@
  (list (srcloc-token (token "DEL" "DEL")
                      (srcloc 'string 1 0 1 3))))
 
+
+
 (check-equal?
+
  (lex "set")
  (list (srcloc-token (token "SET" "set") (srcloc 'string 1 0 1 3))))
 
 (check-equal?
- (lex "SET")
+    (lex "SET")
  (list (srcloc-token (token "SET" "SET") (srcloc 'string 1 0 1 3))))
 
 (check-equal?
