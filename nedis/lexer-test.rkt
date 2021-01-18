@@ -41,4 +41,7 @@
  (list (srcloc-token (token "SET" "sEt")
                      (srcloc 'string 1 0 1 3))))
 
-
+(check-equal?
+    (lex "this")
+(list (srcloc-token (token "STRING" "this") (srcloc 'string 1 0 1 4)))
+    )
