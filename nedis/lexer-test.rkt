@@ -9,3 +9,7 @@
  (lex " ")
  (list (srcloc-token (token " " #:skip? #t)
                      (srcloc 'string 1 0 1 1))))
+(check-equal?
+ (lex "get")
+ (list (srcloc-token (token "get" "get")
+                     (srcloc 'string 1 0 1 3))))
