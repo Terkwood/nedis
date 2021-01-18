@@ -4,6 +4,8 @@
 (define nedis-lexer
     (lexer-srcloc 
         ["\n" (token 'NEWLINE lexeme)]
-        [whitespace (token lexeme #:skip? #t)]))
-        
+        [whitespace (token lexeme #:skip? #t)]
+        [(:or "get" "set" "del") (token lexeme lexeme)]
+    ))
+
 (provide nedis-lexer)
