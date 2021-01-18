@@ -7,5 +7,6 @@ The tiniest, worst language. Written in Racket.
 You can test the lexer!
 
 ```sh
+cd nedis
 racket lexer-test.rkt
 ```
