@@ -1,9 +1,11 @@
 #lang br
+(require brag/support)
 (require "parser.rkt")
-(parse-to-datum #<<delim
+
+(define r (parse-to-datum #<<delim
 SET myname bun
 GET myname
 DEL myname
 delim
-)
-(print "ok")
+))
+(display r)
