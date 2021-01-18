@@ -1,4 +1,5 @@
 #lang br
+; e.g. https://beautifulracket.com/basic/the-tokenizer.html
 (require "lexer.rkt" brag/support)
 
 (define (make-tokenizer ip)
