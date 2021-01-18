@@ -1,12 +1,14 @@
 #lang br
-; e.g. https://beautifulracket.com/bf/the-tokenizer-and-reader.html
-(require brag/support)
-(require "parser.rkt")
+; see https://beautifulracket.com/bf/the-tokenizer-and-reader.html
+; see https://beautifulracket.com/basic/the-parser.html
+(require nedis/parser nedis/tokenizer brag/support)
 
-(define r (parse-to-datum #<<delim
+
+(define str #<<!STOP
 SET myname bun
 GET myname
 DEL myname
-delim
-))
-(display r)
+!STOP
+)
+
+(parse-to-datum (apply-tokenizer make-tokenizer str))
