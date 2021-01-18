@@ -25,7 +25,7 @@
         [get-cmd    (token 'GET lexeme)]
         [set-cmd    (token 'SET lexeme)]
         [del-cmd    (token 'DEL lexeme)]
-        [(repetition 1 +inf.0 (union (char-range #\a #\z) (char-range #\A #\Z) (char-range #\0 #\9))) (token 'STRING lexeme)]
+        [(repetition 1 +inf.0 (char-complement whitespace)) (token 'STRING lexeme)]
         [(:or (from/to "\"" "\"") (from/to "'" "'"))
                     (token 'STRING
                         (substring lexeme

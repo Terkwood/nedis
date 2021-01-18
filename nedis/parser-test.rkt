@@ -4,11 +4,11 @@
 (require nedis/parser nedis/tokenizer brag/support)
 
 
-(define str #<<delim
+(define str #<<!STOP
 SET myname bun
 GET myname
 DEL myname
-delim
+!STOP
 )
 
 (parse-to-datum (apply-tokenizer make-tokenizer str))
