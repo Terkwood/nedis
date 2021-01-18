@@ -55,7 +55,20 @@
           (srcloc 'string 1 0 1 4))))
 
 (check-equal?
+  (lex "'it'")
+  (list (srcloc-token 
+          (token "STRING" "it")
+          (srcloc 'string 1 0 1 4))))
+
+(check-equal?
   (lex "\"some long ones\"")
   (list (srcloc-token 
           (token "STRING" "some long ones")
           (srcloc 'string 1 0 1 16))))
+
+(check-equal?
+  (lex "'some long ones'")
+  (list (srcloc-token 
+          (token "STRING" "some long ones")
+          (srcloc 'string 1 0 1 16))))
+
