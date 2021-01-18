@@ -58,4 +58,4 @@
   (lex "\"some long ones\"")
   (list (srcloc-token 
           (token "STRING" "some long ones")
-        (srcloc 'string 1 0 1 16))))
+          (srcloc 'string 1 0 1 16))))
