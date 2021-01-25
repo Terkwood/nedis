@@ -9,12 +9,15 @@
     (lambda (arg . rest) 
     (display (list arg))))
 
-(define (instruction arg) (display arg))
+(define (instruction arg) (void))
 
 (define state (make-hash))
 
 (define (set token-type key val) (hash-set! state key val))
-(define (get token-type key) (display (hash-ref state key)))
+(define (get token-type key)
+    (begin 
+        (display (hash-ref state key))
+        (display "\n")))
 (define (del token-type key) (hash-remove! state key ))
 
 (provide program instruction set get del)
