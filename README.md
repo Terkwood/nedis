@@ -1,6 +1,12 @@
 # nedis
 
-The tiniest, worst language. Written in Racket.
+This is just a tiny experiment with Racket.  The idea is to implement a language that accepts some Redis-like commands:
+
+```text
+SET myname bun
+GET myname
+DEL myname
+```
 
 ## running tests
 
@@ -9,6 +15,12 @@ You can test the lexer!
 ```sh
 cd nedis
 racket lexer-test.rkt
+```
+
+You can also "test" the parser:
+
+```sh
+racket parser-test.rkt
 ```
 
 ## formatting
