@@ -7,7 +7,7 @@
 
 (define program 
     (lambda (arg . rest) 
-    (display (list arg))))
+    (void)))
 
 (define (instruction arg) (void))
 
@@ -18,6 +18,6 @@
     (begin 
         (display (hash-ref state key))
         (display "\n")))
-(define (del token-type key) (hash-remove! state key ))
+(define (del token-type key) (hash-remove! state key))
 
 (provide program instruction set get del)
