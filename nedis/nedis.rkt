@@ -1,6 +1,5 @@
-#lang racket/base
+#lang br/quicklang
+(require "parser.rkt" "tokenizer.rkt" "reader.rkt")
 
-(provide (except-out 
-           (all-from-out racket/base)
-            #%module-begin)
-(rename-out [module-begin #%module-begin]))
+(module+ reader
+  (provide read-syntax))
