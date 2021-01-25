@@ -7,16 +7,12 @@
      ))
 (provide (rename-out [nedis-module-begin #%module-begin]))
 
-(define (program args) (display args))
+(define program (lambda (arg . rest) (display (list arg))))
 
-(provide program)
+(define (instruction   arg) (display  arg))
 
-(define (instruction token-type arg) (display token-type arg))
+(define (set token-type key val) (display (list token-type key val)))
+(define (get token-type key) (display (list token-type key)))
+(define (del token-type key) (display (list token-type key)))
 
-(provide instruction)
-
-(define (set token-type key val) (display token-type key val))
-(define (get token-type key) (display token-type key))
-(define (del token-type key) (display token-type key))
-
-(provide set get del)
+(provide program instruction set get del)
