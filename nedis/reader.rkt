@@ -1,7 +1,9 @@
-#lang racket
-(require "parser.rkt"
-         parser-tools/lex)
+#lang br/quicklang
+(require nedis/tokenizer nedis/parser)
 
-(provide read-syntax
-         read
-         get-info)
+(define (read-syntax path port)
+  (define parse-tree (parse path (make-tokenizer port)))
+  (define module-datum `(module nedis-module nedis/expander
+                          ,parse-tree))
+  (datum->syntax #f module-datum))
+(provide read-syntax)
