@@ -1,7 +1,11 @@
-#lang racket/base
+#lang br/quicklang
+(require "parser.rkt" "tokenizer.rkt")
 
-(provide 
-    (except-out 
-        (all-from-out racket/base)
-        #%module-begin)
-    (rename-out [module-begin #%module-begin]))
+(define (read-syntax path port)
+  (define parse-tree (parse path (make-tokenizer port path)))
+  (strip-bindings
+   #`(module nedis-mod nedis/expander
+       #,parse-tree)))
+
+(module+ reader
+  (provide read-syntax))
